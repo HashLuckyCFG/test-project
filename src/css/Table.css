@@ -1,0 +1,11 @@
+table {
+    border: 1px solid;
+    width: 50%;
+}
+
+th,
+td {
+    border: 1px solid;
+    padding: 15px;
+    width: 100%;
+}
