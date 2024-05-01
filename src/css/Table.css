@@ -1,12 +1,14 @@
-table {
-    border: 1px solid;
+table {  
     width: 50%;
     margin: auto;
+    color: #fff;
+    background-color: #230e468f;
+    backdrop-filter: blur(5px);
 }
 
 th,
 td {
-    border: 1px solid;
+    
     padding: 15px;
     width: 100%;
 }
