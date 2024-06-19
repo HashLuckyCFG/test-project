@@ -28,12 +28,13 @@ function TableApp() {
             // Выполняем запросы к API
             Promise.all([
               axios.get(`https://api-evm.orderly.org/v1/client/points?address=${address.address}`),
-              axios.get(`https://api-evm.orderly.org/v1/public/campaign/user?address=${address.address}&campaign_id=13`)
-            ]).then(([pointsResponse, campaignResponse]) => {
+              axios.get(`https://api-evm.orderly.org/v1/public/campaign/user?address=${address.address}&campaign_id=13`),
+              axios.get(`https://api-evm.orderly.org/v1/client/airdrop_evm?evm_address=${address.address}`) 
+            ]).then(([pointsResponse, campaignResponse, airdropResponse]) => {
               // Обрабатываем результаты запросов
               const pointsData = pointsResponse.data.data;
               const campaignData = campaignResponse.data.data;
-    
+              const aidropData = airdropResponse.data.data;
               // Вычисляем остальные данные и создаем объект с результатами
               const newDataItem = {
                 number: address.number,
